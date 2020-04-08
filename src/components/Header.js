@@ -8,11 +8,11 @@ const Header = () => {
   const context = useContext(AppContext);
 
   return (
-    <header className="" fixed="top">
+    <header>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <div className="container">
           <Navbar.Brand as={Link} to="/">
-            Prisma graphQL app
+            Site title
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">

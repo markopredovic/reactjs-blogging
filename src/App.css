@@ -23,6 +23,28 @@
   object-position: center;
 }
 
+.m-banner {
+  position: relative;
+}
+.m-banner img {
+  display: block;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.m-banner .l-content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
 @media only screen and (min-width: 576px) {
   .m-post-item > div:last-child {
     position: relative;
@@ -40,10 +62,18 @@
   .m-feature-image img {
     height: 320px;
   }
+
+  .m-banner img {
+    height: 320px;
+  }
 }
 
 @media only screen and (min-width: 992px) {
   .m-feature-image img {
+    height: 350px;
+  }
+
+  .m-banner img {
     height: 350px;
   }
 }
@@ -57,6 +87,10 @@
   .m-feature-image img {
     height: 400px;
   }
+
+  .m-banner img {
+    height: 400px;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -66,6 +100,10 @@
   }
 
   .m-feature-image img {
+    height: 450px;
+  }
+
+  .m-banner img {
     height: 450px;
   }
 }

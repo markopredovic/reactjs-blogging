@@ -1,12 +1,16 @@
-import React from "react";
-import Layout from "../../components/UI/Layout";
-import PageTitle from "../PageTitle";
+import React, { Fragment } from "react";
+import HomeLayout from "../../components/UI/HomeLayout";
+import Banner from "../Banner";
+import HomeIntro from "../HomeIntro";
 
 const HomePage = () => {
   return (
-    <Layout>
-      <PageTitle title="Home" />
-    </Layout>
+    <Fragment>
+      <HomeLayout>
+        <Banner />
+        <HomeIntro />
+      </HomeLayout>
+    </Fragment>
   );
 };
 
