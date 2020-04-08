@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
+/* base: */
+
+/* common: */
+
+/* layout: */
+
+/* modules: */
+.m-post-item {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.m-post-item img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.m-feature-image img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (min-width: 576px) {
+  .m-post-item > div:last-child {
+    position: relative;
+  }
+  .m-post-item img {
+    height: 200px;
+    width: 200px;
+  }
+
+  .m-post-item .l-actions {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .m-feature-image img {
+    height: 320px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (min-width: 992px) {
+  .m-feature-image img {
+    height: 350px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (min-width: 992px) {
+  .m-post-item img {
+    height: 250px;
+    width: 250px;
+  }
+
+  .m-feature-image img {
+    height: 400px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .m-post-item img {
+    height: 280px;
+    width: 280px;
+  }
+
+  .m-feature-image img {
+    height: 450px;
   }
 }
