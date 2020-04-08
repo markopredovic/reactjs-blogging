@@ -19,7 +19,7 @@ const SignUpForm = () => {
   const [errors, setErrors] = useState({});
 
   const { signUpUser } = useSignUpUser();
-  const [credentials, handleChange] = useForm(initialValues);
+  const [credentials, setData, handleChange] = useForm(initialValues);
 
   const _validateForm = () => {
     const _errors = {};

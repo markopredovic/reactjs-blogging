@@ -11,7 +11,7 @@ const EditPostForm = ({ editPostData }) => {
   const [showAlert, setShowAlert] = useState(false);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
-  const [postData, handleChange] = useForm(editPostData);
+  const [postData, setData, handleChange] = useForm(editPostData);
   const [postImage, setPostImage] = useState(null);
   const [pictureExists, setPictureExists] = useState(!!postData.pictureUrl);
   const { updatePost } = useUpdatePost();
