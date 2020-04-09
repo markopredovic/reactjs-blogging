@@ -17,6 +17,7 @@ const SignUpForm = () => {
   const context = useContext(AppContext);
   const history = useHistory();
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const { signUpUser } = useSignUpUser();
   const [credentials, setData, handleChange] = useForm(initialValues);
@@ -48,6 +49,7 @@ const SignUpForm = () => {
       setErrors(_errors);
     } else {
       try {
+        setLoading(true);
         const response = await signUpUser({
           variables: {
             ...credentials,
@@ -55,6 +57,7 @@ const SignUpForm = () => {
         });
 
         context.userLoggedIn(response.data.createUser);
+        setLoading(false);
         history.push("/my-posts");
       } catch (e) {
         const graphqlError = e.message.replace("GraphQL error: ", "");
@@ -103,8 +106,8 @@ const SignUpForm = () => {
           />
           {errors.password && <InlineMessage>{errors.password}</InlineMessage>}
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
+        <Button variant="primary" type="submit" disabled={loading}>
+          {loading ? "Submitting..." : "Submit"}
         </Button>
       </Form>
     </>

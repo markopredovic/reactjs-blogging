@@ -16,9 +16,10 @@ const LoginForm = () => {
   const context = useContext(AppContext);
   const history = useHistory();
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const { loginUser } = useLoginUser();
-  const [credentials, setData, handleChange] = useForm(initialValues);
+  const [credentials, _, handleChange] = useForm(initialValues);
 
   const _validateForm = () => {
     const _errors = {};
@@ -43,6 +44,7 @@ const LoginForm = () => {
       setErrors(_errors);
     } else {
       try {
+        setLoading(true);
         const response = await loginUser({
           variables: {
             ...credentials,
@@ -87,8 +89,8 @@ const LoginForm = () => {
           />
           {errors.password && <InlineMessage>{errors.password}</InlineMessage>}
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
+        <Button variant="primary" type="submit" disabled={loading}>
+          {loading ? "Submitting..." : "Submit"}
         </Button>
       </Form>
     </>
