@@ -16,7 +16,7 @@ import AddPostPage from "./components/pages/AddPostPage";
 import EditPostPage from "./components/pages/EditPostPage";
 import MyPostsPage from "./components/pages/MyPostsPage";
 import { useApp } from "./hooks/useApp";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./css/bootstrap.min.css";
 import "./App.css";
 import client from "./apollo-client";
 
