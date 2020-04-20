@@ -31,7 +31,7 @@ function App() {
   } = useApp();
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("bloggingtoken");
     if (!!token) {
       const decoded = jwt.verify(token, process.env.REACT_APP_JWT_SECRET);
       const user = {
