@@ -12,7 +12,7 @@ const Header = () => {
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <div className="container">
           <Navbar.Brand as={Link} to="/">
-            Site title
+            Kalifornijske gliste
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
