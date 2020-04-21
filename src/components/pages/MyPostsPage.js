@@ -8,9 +8,9 @@ import MyPosts from "../PostsList/MyPosts";
 const MyPostsPage = () => {
   return (
     <Layout>
-      <PageTitle title="My Posts" />
+      <PageTitle title="Moji postovi" />
       <Button as={Link} to="/posts/new" className="mb-4" size="lg">
-        Add Post
+        Dodaj Post
       </Button>
       <MyPosts />
     </Layout>

@@ -24,15 +24,15 @@ const EditPostForm = ({ editPostData }) => {
     const _errors = {};
 
     if (postData.title.trim() === "") {
-      _errors.title = "Required field";
+      _errors.title = "Polje je obavezno";
     }
 
     if (postData.description.trim() === "") {
-      _errors.description = "Required field";
+      _errors.description = "Polje je obavezno";
     }
 
     if (postData.body.trim() === "") {
-      _errors.body = "Required field";
+      _errors.body = "Polje je obavezno";
     }
 
     return _errors;
@@ -40,8 +40,6 @@ const EditPostForm = ({ editPostData }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    console.log(document.getElementsByClassName("custom-file-input")[0]);
 
     setShowAlert(false);
     setErrors({});
@@ -121,13 +119,15 @@ const EditPostForm = ({ editPostData }) => {
 
   return (
     <>
-      {showAlert && <Alert variant="success">Post updated!</Alert>}
+      {showAlert && <Alert variant="success">Post je ažuriran!</Alert>}
       {!!errors.graphqlError && (
         <Alert variant="danger">{errors.graphqlError}</Alert>
       )}
       <Form onSubmit={handleSubmit} className="mb-4">
         <Form.Group controlId="formBasicText">
-          <Form.Label>Edit Post title</Form.Label>
+          <Form.Label>
+            <strong>Edituj naslov posta</strong>
+          </Form.Label>
           <Form.Control
             type="text"
             name="title"
@@ -138,7 +138,9 @@ const EditPostForm = ({ editPostData }) => {
           {errors.title && <InlineMessage>{errors.title}</InlineMessage>}
         </Form.Group>
         <Form.Group controlId="post.shortDescription">
-          <Form.Label>Edit Post description</Form.Label>
+          <Form.Label>
+            <strong>Edituj opis posta</strong>
+          </Form.Label>
           <Form.Control
             as="textarea"
             name="description"
@@ -150,7 +152,9 @@ const EditPostForm = ({ editPostData }) => {
         </Form.Group>
         {!pictureExists ? (
           <Form.Group controlId="post.image">
-            <Form.Label>Edit featured image</Form.Label>
+            <Form.Label>
+              <strong>Edituj glavnu sliku</strong>
+            </Form.Label>
             <Form.File
               id="custom-file-translate-html"
               label=""
@@ -161,7 +165,9 @@ const EditPostForm = ({ editPostData }) => {
           </Form.Group>
         ) : (
           <div className="mb-3">
-            <label className="d-block">Edit featured image</label>
+            <label className="d-block">
+              <strong>Edituj glavnu sliku</strong>
+            </label>
             <div className="d-flex align-top">
               <img
                 src={editPostData.pictureUrl}
@@ -179,7 +185,9 @@ const EditPostForm = ({ editPostData }) => {
           </div>
         )}
         <Form.Group controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Edit Post body</Form.Label>
+          <Form.Label>
+            <strong>Edituj sadržaj posta</strong>
+          </Form.Label>
           <Form.Control
             as="textarea"
             name="body"
@@ -197,7 +205,7 @@ const EditPostForm = ({ editPostData }) => {
             onChange={(e) => {
               handleChange(e);
             }}
-            label="Published"
+            label="Objavi"
           />
         </Form.Group>
         <Button variant="primary" type="submit" disabled={loading}>

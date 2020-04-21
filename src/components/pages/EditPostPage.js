@@ -16,10 +16,10 @@ const EditPostPage = () => {
 
   return (
     <Layout>
-      <PageTitle title="Edit Post" />
+      <PageTitle title="Edituj Post" />
       <EditPostForm editPostData={data.post} />
       <Button as={Link} to="/my-posts" size="sm" variant="dark">
-        <FaArrowLeft /> back
+        <FaArrowLeft /> vrati se
       </Button>
     </Layout>
   );

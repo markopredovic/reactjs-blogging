@@ -15,7 +15,7 @@ const LogoutPage = () => {
 
   return (
     <Layout>
-      <PageTitle title="Logout" />
+      <PageTitle title="Izloguj se" />
       <p>You are logging out ...</p>
     </Layout>
   );

@@ -6,7 +6,7 @@ import LoginForm from "../forms/LoginForm";
 const LoginPage = () => {
   return (
     <Layout>
-      <PageTitle title="Login" />
+      <PageTitle title="Uloguj se" />
       <LoginForm />
     </Layout>
   );

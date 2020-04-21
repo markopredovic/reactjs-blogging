@@ -40,30 +40,30 @@ const DeletePostForm = ({ deletePostId }) => {
     <>
       <Form onSubmit={handleSubmit} className="mb-4">
         <Button variant="danger" type="submit">
-          Delete Post
+          Obriši Post
         </Button>
       </Form>
       <Modal show={showConfirmModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Confirm delete post</Modal.Title>
+          <Modal.Title>Potvrdi brisanje posta</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {postDeleted && <Alert variant="success">Post is deleted!</Alert>}
-          Are you sure to delete this post?
+          {postDeleted && <Alert variant="success">Post je obrisan!</Alert>}
+          Da li potvrdjuješ brisanje posta?
         </Modal.Body>
         <Modal.Footer>
           {!postDeleted && (
             <Button variant="secondary" onClick={handleClose}>
-              Cancel
+              Odustani
             </Button>
           )}
           {postDeleted ? (
             <Button variant="secondary" onClick={handleClose}>
-              Close
+              Zatvori
             </Button>
           ) : (
             <Button variant="primary" onClick={handleDelete}>
-              Yes, delete
+              Obriši
             </Button>
           )}
         </Modal.Footer>

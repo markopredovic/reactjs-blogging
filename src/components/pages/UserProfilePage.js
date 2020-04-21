@@ -6,7 +6,7 @@ import UserProfile from "../UserProfile";
 const UserProfilePage = () => {
   return (
     <Layout>
-      <PageTitle title="Profile" />
+      <PageTitle title="Profil" />
       <UserProfile />
     </Layout>
   );

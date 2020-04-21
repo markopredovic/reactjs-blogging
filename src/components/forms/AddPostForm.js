@@ -29,15 +29,15 @@ const AddPostForm = () => {
     const _errors = {};
 
     if (postData.title.trim() === "") {
-      _errors.title = "Field is required";
+      _errors.title = "Polje je obavezno";
     }
 
     if (postData.description.trim() === "") {
-      _errors.description = "Field is required";
+      _errors.description = "Polje je obavezno";
     }
 
     if (postData.body.trim() === "") {
-      _errors.body = "Field is required";
+      _errors.body = "Polje je obavezno";
     }
 
     return _errors;
@@ -134,7 +134,9 @@ const AddPostForm = () => {
       )}
       <Form onSubmit={handleSubmit} id="addPostForm">
         <Form.Group controlId="formBasicText">
-          <Form.Label>Post title</Form.Label>
+          <Form.Label>
+            <strong className="m-required">Post naslov</strong>
+          </Form.Label>
           <Form.Control
             type="text"
             name="title"
@@ -145,7 +147,9 @@ const AddPostForm = () => {
           {errors.title && <InlineMessage>{errors.title}</InlineMessage>}
         </Form.Group>
         <Form.Group controlId="post.shortDescription">
-          <Form.Label>Post description</Form.Label>
+          <Form.Label>
+            <strong className="m-required">Post kraći opis</strong>
+          </Form.Label>
           <Form.Control
             as="textarea"
             name="description"
@@ -157,17 +161,21 @@ const AddPostForm = () => {
           {errors.body && <InlineMessage>{errors.description}</InlineMessage>}
         </Form.Group>
         <Form.Group controlId="post.image">
-          <Form.Label>Post featured image</Form.Label>
+          <Form.Label>
+            <strong>Post glavna slika</strong>
+          </Form.Label>
           <Form.File
             id="custom-file-translate-html"
-            label="Add image"
-            data-browse="browse"
+            label="dodaj sliku"
+            data-browse="pretraži"
             custom
             onChange={handlePostImage}
           />
         </Form.Group>
         <Form.Group controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Post body</Form.Label>
+          <Form.Label>
+            <strong className="m-required">Post sadržaj</strong>
+          </Form.Label>
           <Form.Control
             as="textarea"
             name="body"
@@ -186,11 +194,11 @@ const AddPostForm = () => {
             onChange={(e) => {
               handleChange(e);
             }}
-            label="Publish"
+            label="Objavi"
           />
         </Form.Group>
         <Button variant="primary" type="submit" disabled={loading}>
-          {loading ? "Adding..." : "Add"}
+          {loading ? "Dodavanje..." : "Dodaj"}
         </Button>
       </Form>
     </>

@@ -26,14 +26,14 @@ const SignUpForm = () => {
     const _errors = {};
 
     if (credentials.name.trim() === "") {
-      _errors.name = "Field is required";
+      _errors.name = "Polje je obavezno";
     }
 
     if (!isEmail(credentials.email)) {
-      _errors.email = "Not valid email address";
+      _errors.email = "Email adresa nije validna";
     }
     if (credentials.password.length < 8) {
-      _errors.password = "Password must be 8 characters long or more";
+      _errors.password = "Šifra mora da bude duga 8 ili više karaktera duga";
     }
 
     return _errors;
@@ -73,10 +73,10 @@ const SignUpForm = () => {
       )}
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicTest">
-          <Form.Label>Name</Form.Label>
+          <Form.Label>Ime</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter name"
+            placeholder="Unesi ime"
             name="name"
             value={credentials.name}
             onChange={(e) => handleChange(e)}
@@ -84,10 +84,10 @@ const SignUpForm = () => {
           {errors.name && <InlineMessage>{errors.name}</InlineMessage>}
         </Form.Group>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>Email adresa</Form.Label>
           <Form.Control
             type="email"
-            placeholder="Enter email"
+            placeholder="Unesi email"
             name="email"
             value={credentials.email}
             onChange={(e) => handleChange(e)}
@@ -100,14 +100,14 @@ const SignUpForm = () => {
           <Form.Control
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="Šifra"
             value={credentials.password}
             onChange={(e) => handleChange(e)}
           />
           {errors.password && <InlineMessage>{errors.password}</InlineMessage>}
         </Form.Group>
         <Button variant="primary" type="submit" disabled={loading}>
-          {loading ? "Submitting..." : "Submit"}
+          {loading ? "Registrovanje..." : "Registruj se"}
         </Button>
       </Form>
     </>

@@ -27,7 +27,7 @@ const PostDetailsPage = () => {
         className="mb-3"
       />
       <Button onClick={history.goBack} size="sm" variant="dark">
-        <FaArrowLeft /> back
+        <FaArrowLeft /> vrati se
       </Button>
     </Layout>
   );

@@ -11,7 +11,7 @@ const AddPostPage = () => {
 
   return (
     <Layout>
-      <PageTitle title="Add new post" />
+      <PageTitle title="Dodaj novi post" />
       <AddPostForm />
       <Button
         className="mt-4"
@@ -19,7 +19,7 @@ const AddPostPage = () => {
         variant="dark"
         size="sm"
       >
-        <FaArrowLeft /> Back
+        <FaArrowLeft /> Vrati se
       </Button>
     </Layout>
   );
