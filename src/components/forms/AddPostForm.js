@@ -126,7 +126,7 @@ const AddPostForm = () => {
           onClose={() => setShowAlert(false)}
           dismissible
         >
-          Post added!
+          Post je unesen uspešno!
         </Alert>
       )}
       {!!errors.graphqlError && (
@@ -135,25 +135,25 @@ const AddPostForm = () => {
       <Form onSubmit={handleSubmit} id="addPostForm">
         <Form.Group controlId="formBasicText">
           <Form.Label>
-            <strong className="m-required">Post naslov</strong>
+            <strong className="m-required">Naslov</strong>
           </Form.Label>
           <Form.Control
             type="text"
             name="title"
             value={postData.title}
             onChange={(e) => handleChange(e)}
-            placeholder="Enter title"
+            placeholder="Unesi naslov"
           />
           {errors.title && <InlineMessage>{errors.title}</InlineMessage>}
         </Form.Group>
         <Form.Group controlId="post.shortDescription">
           <Form.Label>
-            <strong className="m-required">Post kraći opis</strong>
+            <strong className="m-required">Kraći opis</strong>
           </Form.Label>
           <Form.Control
             as="textarea"
             name="description"
-            placeholder="Enter short description"
+            placeholder="Unesi opis"
             value={postData.description}
             onChange={(e) => handleChange(e)}
             rows="2"
@@ -162,7 +162,7 @@ const AddPostForm = () => {
         </Form.Group>
         <Form.Group controlId="post.image">
           <Form.Label>
-            <strong>Post glavna slika</strong>
+            <strong>Glavna slika</strong>
           </Form.Label>
           <Form.File
             id="custom-file-translate-html"
@@ -174,12 +174,12 @@ const AddPostForm = () => {
         </Form.Group>
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label>
-            <strong className="m-required">Post sadržaj</strong>
+            <strong className="m-required">Sadržaj posta</strong>
           </Form.Label>
           <Form.Control
             as="textarea"
             name="body"
-            placeholder="Enter post content"
+            placeholder="Unesi sadržaj"
             value={postData.body}
             onChange={(e) => handleChange(e)}
             rows="10"

@@ -91,24 +91,24 @@ const UserProfile = () => {
       </div>
       <div>
         <Button variant="warning" className="mr-3" onClick={handleEdit}>
-          <FaEdit /> Edit
+          <FaEdit /> Izmeni
         </Button>
         <Button variant="danger" onClick={handleDelete}>
-          <FaTrash /> {deletingUser ? "Deleting..." : "Delete"}
+          <FaTrash /> {deletingUser ? "Brisanje..." : "Brisanje"}
         </Button>
       </div>
       <Modal show={showEdit} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Edit user</Modal.Title>
+          <Modal.Title>Izmena podataka korisnika</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="user.name">
-              <Form.Label>User name</Form.Label>
+              <Form.Label>Korisničko ime</Form.Label>
               <Form.Control
                 type="text"
                 name="name"
-                placeholder="Enter name"
+                placeholder="Unesi ime"
                 value={userData.name}
                 onChange={(e) =>
                   setUserData({ ...userData, [e.target.name]: e.target.value })
@@ -116,11 +116,11 @@ const UserProfile = () => {
               />
             </Form.Group>
             <Form.Group controlId="user.email">
-              <Form.Label>User email address</Form.Label>
+              <Form.Label>Email adresa</Form.Label>
               <Form.Control
                 type="email"
                 name="email"
-                placeholder="Enter email"
+                placeholder="Unesi email"
                 value={userData.email}
                 onChange={(e) =>
                   setUserData({ ...userData, [e.target.name]: e.target.value })
@@ -133,10 +133,10 @@ const UserProfile = () => {
                 onClick={handleClose}
                 className="mr-3"
               >
-                Cancel
+                Otkaži
               </Button>
               <Button variant="primary" type="submit">
-                Submit
+                Potvrdi
               </Button>
             </div>
           </Form>

@@ -16,7 +16,7 @@ const EditPostPage = () => {
 
   return (
     <Layout>
-      <PageTitle title="Edituj Post" />
+      <PageTitle title="Izmeni Post" />
       <EditPostForm editPostData={data.post} />
       <Button as={Link} to="/my-posts" size="sm" variant="dark">
         <FaArrowLeft /> vrati se

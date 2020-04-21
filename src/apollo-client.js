@@ -3,7 +3,7 @@ import ApolloClient from "apollo-boost";
 const client = new ApolloClient({
   uri: process.env.REACT_APP_APOLLO_CLIENT_URI,
   request: (operation) => {
-    const token = localStorage.getItem("bugtrackertoken");
+    const token = localStorage.getItem("bloggingtoken");
     operation.setContext({
       headers: {
         authorization: token ? `Bearer ${token}` : "",

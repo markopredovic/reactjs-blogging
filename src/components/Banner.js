@@ -9,8 +9,8 @@ const Banner = () => {
       </div>
       <div className="l-content-wrapper">
         <div className="l-content text-center">
-          <h3 className="mb-2 text-uppercase">Title</h3>
-          <p>subtitle</p>
+          <h3 className="mb-2 text-uppercase">Naslov</h3>
+          <p>podnaslov</p>
         </div>
       </div>
     </div>

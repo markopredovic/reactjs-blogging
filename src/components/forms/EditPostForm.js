@@ -126,20 +126,20 @@ const EditPostForm = ({ editPostData }) => {
       <Form onSubmit={handleSubmit} className="mb-4">
         <Form.Group controlId="formBasicText">
           <Form.Label>
-            <strong>Edituj naslov posta</strong>
+            <strong>Izmeni naslov</strong>
           </Form.Label>
           <Form.Control
             type="text"
             name="title"
             value={postData.title}
             onChange={(e) => handleChange(e)}
-            placeholder="Enter title"
+            placeholder="Unesi naslov"
           />
           {errors.title && <InlineMessage>{errors.title}</InlineMessage>}
         </Form.Group>
         <Form.Group controlId="post.shortDescription">
           <Form.Label>
-            <strong>Edituj opis posta</strong>
+            <strong>Izmeni opis</strong>
           </Form.Label>
           <Form.Control
             as="textarea"
@@ -147,18 +147,19 @@ const EditPostForm = ({ editPostData }) => {
             value={postData.description}
             onChange={(e) => handleChange(e)}
             rows="2"
+            placeholder="Unesi tekst"
           />
           {errors.body && <InlineMessage>{errors.description}</InlineMessage>}
         </Form.Group>
         {!pictureExists ? (
           <Form.Group controlId="post.image">
             <Form.Label>
-              <strong>Edituj glavnu sliku</strong>
+              <strong>Izmeni glavnu sliku</strong>
             </Form.Label>
             <Form.File
               id="custom-file-translate-html"
               label=""
-              data-browse="browse image"
+              data-browse="pretraži sliku"
               custom
               onChange={handlePostImage}
             />
@@ -166,7 +167,7 @@ const EditPostForm = ({ editPostData }) => {
         ) : (
           <div className="mb-3">
             <label className="d-block">
-              <strong>Edituj glavnu sliku</strong>
+              <strong>Izmeni glavnu sliku</strong>
             </label>
             <div className="d-flex align-top">
               <img
@@ -186,7 +187,7 @@ const EditPostForm = ({ editPostData }) => {
         )}
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label>
-            <strong>Edituj sadržaj posta</strong>
+            <strong>Izmeni sadržaj</strong>
           </Form.Label>
           <Form.Control
             as="textarea"
@@ -209,7 +210,7 @@ const EditPostForm = ({ editPostData }) => {
           />
         </Form.Group>
         <Button variant="primary" type="submit" disabled={loading}>
-          {loading ? "Editing..." : "Edit"}
+          {loading ? "Izmena..." : "Izmeni"}
         </Button>
       </Form>
     </>
