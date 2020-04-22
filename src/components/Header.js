@@ -18,7 +18,10 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link as={NavLink} to="/" exact>
-                <FaHome style={{ fontSize: "24px" }} />
+                Home
+              </Nav.Link>
+              <Nav.Link as={NavLink} to="/services" exact>
+                Usluga
               </Nav.Link>
               <Nav.Link as={NavLink} to="/posts" exact>
                 Blog

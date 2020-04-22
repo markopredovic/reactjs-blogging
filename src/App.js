@@ -6,6 +6,7 @@ import jwt from "jsonwebtoken";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./components/pages/HomePage";
+import ServicesPage from "./components/pages/ServicesPage";
 import SignUpPage from "./components/pages/SignUpPage";
 import LoginPage from "./components/pages/LoginPage";
 import LogoutPage from "./components/pages/LogoutPage";
@@ -52,6 +53,7 @@ function App() {
           <Switch>
             <Route path="/" exact component={HomePage} />
             <Route path="/profile" exact component={UserProfilePage} />
+            <Route path="/services" exact component={ServicesPage} />
             <Route path="/posts" exact component={Blog} />
             <Route path="/posts/new" exact component={AddPostPage} />
             <Route path="/edit/post/:id" children={<EditPostPage />} />

@@ -73,7 +73,9 @@ const SignUpForm = () => {
       )}
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicTest">
-          <Form.Label>Ime</Form.Label>
+          <Form.Label>
+            <strong className="m-required">Ime</strong>
+          </Form.Label>
           <Form.Control
             type="text"
             placeholder="Unesi ime"
@@ -84,7 +86,9 @@ const SignUpForm = () => {
           {errors.name && <InlineMessage>{errors.name}</InlineMessage>}
         </Form.Group>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email adresa</Form.Label>
+          <Form.Label>
+            <strong className="m-required">Email adresa</strong>
+          </Form.Label>
           <Form.Control
             type="email"
             placeholder="Unesi email"
@@ -96,7 +100,9 @@ const SignUpForm = () => {
         </Form.Group>
 
         <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>
+            <strong className="m-required">Šifra</strong>
+          </Form.Label>
           <Form.Control
             type="password"
             name="password"
